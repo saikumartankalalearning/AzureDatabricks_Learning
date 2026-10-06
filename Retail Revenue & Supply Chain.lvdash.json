@@ -159,48 +159,6 @@
       "layout": [
         {
           "widget": {
-            "name": "08bf1423",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "1bb727fb",
-                  "fields": [
-                    {
-                      "name": "countdistinct(o_custkey)",
-                      "expression": "COUNT(DISTINCT `o_custkey`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "encodings": {
-                "value": {
-                  "displayName": "Count of Unique o_custkey",
-                  "fieldName": "countdistinct(o_custkey)"
-                }
-              },
-              "frame": {
-                "description": "Unique Customers",
-                "showDescription": false,
-                "showTitle": true,
-                "title": "Unique Customers"
-              },
-              "version": 2,
-              "widgetType": "counter"
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 2,
-            "width": 2,
-            "height": 2
-          }
-        },
-        {
-          "widget": {
             "name": "2185ae62",
             "queries": [
               {
