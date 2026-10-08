@@ -233,7 +233,7 @@
           },
           "position": {
             "x": 0,
-            "y": 12,
+            "y": 10,
             "width": 4,
             "height": 6
           }
@@ -369,7 +369,7 @@
           },
           "position": {
             "x": 4,
-            "y": 12,
+            "y": 10,
             "width": 8,
             "height": 6
           }
@@ -496,7 +496,7 @@
           },
           "position": {
             "x": 0,
-            "y": 4,
+            "y": 2,
             "width": 4,
             "height": 8
           }
@@ -709,112 +709,9 @@
           },
           "position": {
             "x": 4,
-            "y": 7,
+            "y": 5,
             "width": 8,
             "height": 5
-          }
-        },
-        {
-          "widget": {
-            "name": "de550db9",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "e7a62da2",
-                  "fields": [
-                    {
-                      "name": "Priority",
-                      "expression": "`Priority`"
-                    },
-                    {
-                      "name": "daily(Date)",
-                      "expression": "DATE_TRUNC(\"DAY\", `Date`)"
-                    },
-                    {
-                      "name": "sum(Total Price)",
-                      "expression": "SUM(`Total Price`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "encodings": {
-                "color": {
-                  "displayName": "Priority",
-                  "fieldName": "Priority",
-                  "scale": {
-                    "mappings": [
-                      {
-                        "color": "#70819A",
-                        "value": "5-LOW"
-                      },
-                      {
-                        "color": "#88BFE0",
-                        "value": "4-NOT SPECIFIED"
-                      },
-                      {
-                        "color": "#86B6C0",
-                        "value": "3-MEDIUM"
-                      },
-                      {
-                        "color": "#ED9A93",
-                        "value": "2-HIGH"
-                      },
-                      {
-                        "color": "#AC506F",
-                        "value": "1-URGENT"
-                      }
-                    ],
-                    "type": "categorical"
-                  }
-                },
-                "x": {
-                  "axis": {
-                    "title": "Date"
-                  },
-                  "displayName": "Date",
-                  "fieldName": "daily(Date)",
-                  "scale": {
-                    "type": "temporal"
-                  }
-                },
-                "y": {
-                  "displayName": "Sum of Total Price",
-                  "fieldName": "sum(Total Price)",
-                  "scale": {
-                    "type": "quantitative"
-                  }
-                }
-              },
-              "frame": {
-                "showTitle": true,
-                "title": "Revenue by Order Priority"
-              },
-              "mark": {
-                "colors": [
-                  "#6B819C",
-                  "#00A972",
-                  "#FF3621",
-                  "#8BCAE7",
-                  "#AB4057",
-                  "#99DDB4",
-                  "#FCA4A1",
-                  "#919191",
-                  "#BF7080"
-                ]
-              },
-              "version": 3,
-              "widgetType": "line"
-            }
-          },
-          "position": {
-            "x": 4,
-            "y": 1,
-            "width": 8,
-            "height": 6
           }
         }
       ],
