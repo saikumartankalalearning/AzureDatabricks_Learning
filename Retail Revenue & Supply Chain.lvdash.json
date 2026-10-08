@@ -723,72 +723,6 @@
       "layout": [
         {
           "widget": {
-            "name": "a7a3745b",
-            "queries": [
-              {
-                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_revenue",
-                "query": {
-                  "datasetName": "ced91012",
-                  "fields": [
-                    {
-                      "name": "revenue",
-                      "expression": "`revenue`"
-                    },
-                    {
-                      "name": "revenue_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              },
-              {
-                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Total Price",
-                "query": {
-                  "datasetName": "e7a62da2",
-                  "fields": [
-                    {
-                      "name": "Total Price",
-                      "expression": "`Total Price`"
-                    },
-                    {
-                      "name": "Total Price_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 2,
-              "frame": {
-                "showTitle": true
-              },
-              "widgetType": "filter-multi-select",
-              "encodings": {
-                "fields": [
-                  {
-                    "fieldName": "revenue",
-                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_revenue"
-                  },
-                  {
-                    "fieldName": "Total Price",
-                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Total Price"
-                  }
-                ]
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 0,
-            "width": 4,
-            "height": 1
-          }
-        },
-        {
-          "widget": {
             "name": "e7519d6f",
             "queries": [
               {
@@ -900,7 +834,7 @@
             "name": "20241111",
             "queries": [
               {
-                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_o_orderdate",
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c2e2f656153e8f0354a3b332669e_o_orderdate",
                 "query": {
                   "datasetName": "ced91012",
                   "fields": [
@@ -910,23 +844,6 @@
                     },
                     {
                       "name": "o_orderdate_associativity",
-                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              },
-              {
-                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Date",
-                "query": {
-                  "datasetName": "e7a62da2",
-                  "fields": [
-                    {
-                      "name": "Date",
-                      "expression": "`Date`"
-                    },
-                    {
-                      "name": "Date_associativity",
                       "expression": "COUNT_IF(`associative_filter_predicate_group`)"
                     }
                   ],
@@ -956,11 +873,7 @@
                 "fields": [
                   {
                     "fieldName": "o_orderdate",
-                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_o_orderdate"
-                  },
-                  {
-                    "fieldName": "Date",
-                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Date"
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c2e2f656153e8f0354a3b332669e_o_orderdate"
                   }
                 ]
               }
@@ -1005,6 +918,9 @@
                 "fields": [
                   {
                     "variableName": "Total Orders vs Return Count"
+                  },
+                  {
+                    "variableName": "temp"
                   }
                 ]
               }
@@ -1020,29 +936,10 @@
         {
           "widget": {
             "name": "35f514f8",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "3530ec9c",
-                  "fields": [
-                    {
-                      "name": "$Total Orders vs Return Count",
-                      "variable": "Total Orders vs Return Count"
-                    }
-                  ],
-                  "disaggregated": true
-                }
-              }
-            ],
             "spec": {
               "version": 2,
               "widgetType": "counter",
-              "encodings": {
-                "value": {
-                  "fieldName": "$Total Orders vs Return Count"
-                }
-              },
+              "encodings": {},
               "data": {
                 "queryName": "main_query"
               }
@@ -1095,6 +992,20 @@
           },
           {
             "expression": "SUM(`3530ec9c`.`return_count`)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "temp",
+      "displayName": "temp",
+      "field": {
+        "options": [
+          {
+            "expression": "`3530ec9c`.`total_orders`"
+          },
+          {
+            "expression": "`3530ec9c`.`return_count`"
           }
         ]
       }
