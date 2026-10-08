@@ -167,12 +167,12 @@
                   "datasetName": "e7a62da2",
                   "fields": [
                     {
-                      "name": "Priority",
-                      "expression": "`Priority`"
-                    },
-                    {
                       "name": "sum(Total Price)",
                       "expression": "SUM(`Total Price`)"
+                    },
+                    {
+                      "name": "Priority",
+                      "expression": "`Priority`"
                     }
                   ],
                   "disaggregated": false
@@ -180,17 +180,31 @@
               }
             ],
             "spec": {
+              "frame": {
+                "showDescription": true,
+                "showTitle": true,
+                "title": {
+                  "value": "Revenue by Order Priority",
+                  "fields": []
+                },
+                "description": {
+                  "value": "All Time",
+                  "fields": []
+                }
+              },
+              "version": 3,
+              "widgetType": "pie",
               "encodings": {
                 "angle": {
-                  "displayName": "Associated Revenue",
                   "fieldName": "sum(Total Price)",
                   "scale": {
                     "type": "quantitative"
-                  }
+                  },
+                  "displayName": "Associated Revenue"
                 },
                 "color": {
-                  "displayName": "Order Priority",
                   "fieldName": "Priority",
+                  "displayName": "Order Priority",
                   "scale": {
                     "mappings": [
                       {
@@ -221,14 +235,9 @@
                   "show": true
                 }
               },
-              "frame": {
-                "description": "All Time",
-                "showDescription": true,
-                "showTitle": true,
-                "title": "Revenue by Order Priority"
-              },
-              "version": 3,
-              "widgetType": "pie"
+              "data": {
+                "queryName": "main_query"
+              }
             }
           },
           "position": {
@@ -265,106 +274,80 @@
               }
             ],
             "spec": {
-              "allowHTMLByDefault": true,
-              "condensed": false,
+              "frame": {
+                "showDescription": true,
+                "showTitle": true,
+                "title": {
+                  "value": "Most Valuable Customers",
+                  "fields": []
+                },
+                "description": {
+                  "value": "All Time",
+                  "fields": []
+                }
+              },
+              "version": 2,
+              "rowsPerPage": 25,
+              "disallowViewersFromResizingColumns": true,
+              "displayRowNumbers": false,
+              "widgetType": "table",
               "encodings": {
                 "columns": [
                   {
-                    "alignContent": "right",
-                    "allowHTML": true,
-                    "allowSearch": false,
-                    "booleanValues": [
-                      "false",
-                      "true"
-                    ],
-                    "displayAs": "number",
-                    "displayName": "Customer ID #",
                     "fieldName": "Customer ID #",
-                    "highlightLinks": false,
-                    "imageHeight": "",
-                    "imageTitleTemplate": "{{ @ }}",
-                    "imageUrlTemplate": "{{ @ }}",
-                    "imageWidth": "",
-                    "linkOpenInNewTab": true,
-                    "linkTextTemplate": "{{ @ }}",
-                    "linkTitleTemplate": "{{ @ }}",
-                    "linkUrlTemplate": "{{ @ }}",
-                    "numberFormat": "",
-                    "order": 100000,
-                    "preserveWhitespace": false,
-                    "title": "Customer ID #",
-                    "type": "integer",
-                    "useMonospaceFont": false,
-                    "visible": true
+                    "useForSearch": false,
+                    "format": {
+                      "type": "number-currency",
+                      "currencyCode": "USD",
+                      "abbreviation": "none",
+                      "decimalPlaces": {
+                        "type": "exact",
+                        "places": 0
+                      },
+                      "hideGroupSeparator": true
+                    },
+                    "displayName": "Customer ID #",
+                    "actions": {
+                      "hover": {
+                        "type": "tooltip",
+                        "tooltipTemplate": "{{ @ }}"
+                      }
+                    },
+                    "style": {
+                      "type": "basic"
+                    }
                   },
                   {
-                    "alignContent": "left",
-                    "allowHTML": false,
-                    "allowSearch": false,
-                    "booleanValues": [
-                      "false",
-                      "true"
-                    ],
-                    "displayAs": "string",
-                    "displayName": "Customer Segment",
                     "fieldName": "Customer Segment",
-                    "highlightLinks": false,
-                    "imageHeight": "",
-                    "imageTitleTemplate": "{{ @ }}",
-                    "imageUrlTemplate": "{{ @ }}",
-                    "imageWidth": "",
-                    "linkOpenInNewTab": true,
-                    "linkTextTemplate": "{{ @ }}",
-                    "linkTitleTemplate": "{{ @ }}",
-                    "linkUrlTemplate": "{{ @ }}",
-                    "order": 100001,
-                    "preserveWhitespace": false,
-                    "title": "Customer Segment",
-                    "type": "string",
-                    "useMonospaceFont": false,
-                    "visible": true
+                    "useForSearch": false,
+                    "displayName": "Customer Segment",
+                    "actions": {
+                      "hover": {
+                        "type": "tooltip",
+                        "tooltipTemplate": "{{ @ }}"
+                      }
+                    }
                   },
                   {
-                    "alignContent": "left",
-                    "allowHTML": true,
-                    "allowSearch": false,
-                    "booleanValues": [
-                      "false",
-                      "true"
-                    ],
-                    "displayAs": "string",
-                    "displayName": "Total Customer Revenue",
                     "fieldName": "Total Customer Revenue",
-                    "highlightLinks": false,
-                    "imageHeight": "",
-                    "imageTitleTemplate": "{{ @ }}",
-                    "imageUrlTemplate": "{{ @ }}",
-                    "imageWidth": "",
-                    "linkOpenInNewTab": true,
-                    "linkTextTemplate": "{{ @ }}",
-                    "linkTitleTemplate": "{{ @ }}",
-                    "linkUrlTemplate": "{{ @ }}",
-                    "order": 100003,
-                    "preserveWhitespace": false,
-                    "title": "Total Customer Revenue",
-                    "type": "string",
-                    "useMonospaceFont": false,
-                    "visible": true
+                    "useForSearch": false,
+                    "displayName": "Total Customer Revenue",
+                    "actions": {
+                      "hover": {
+                        "type": "tooltip",
+                        "tooltipTemplate": "{{ @ }}"
+                      }
+                    },
+                    "style": {
+                      "type": "html",
+                      "highlightLinks": false
+                    }
                   }
                 ]
               },
-              "frame": {
-                "description": "All Time",
-                "showDescription": true,
-                "showTitle": true,
-                "title": "Most Valuable Customers"
-              },
-              "invisibleColumns": [],
-              "itemsPerPage": 25,
-              "paginationSize": "default",
-              "version": 1,
-              "widgetType": "table",
-              "withRowNumber": false
+              "data": {
+                "queryName": "main_query"
+              }
             }
           },
           "position": {
@@ -404,12 +387,12 @@
                       "expression": "`nation`"
                     },
                     {
-                      "name": "sum(revenue)",
-                      "expression": "SUM(`revenue`)"
-                    },
-                    {
                       "name": "yearly(o_orderdate)",
                       "expression": "DATE_TRUNC(\"YEAR\", `o_orderdate`)"
+                    },
+                    {
+                      "name": "sum(revenue)",
+                      "expression": "SUM(`revenue`)"
                     }
                   ],
                   "disaggregated": false
@@ -417,13 +400,44 @@
               }
             ],
             "spec": {
+              "frame": {
+                "showDescription": true,
+                "showTitle": true,
+                "title": {
+                  "value": "Revenue Trend",
+                  "fields": []
+                },
+                "description": {
+                  "value": "By Nation",
+                  "fields": []
+                }
+              },
+              "version": 3,
+              "widgetType": "bar",
               "encodings": {
+                "x": {
+                  "fieldName": "yearly(o_orderdate)",
+                  "displayName": "Order Date",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fieldName": "sum(revenue)",
+                  "axis": {
+                    "title": "Revenue"
+                  },
+                  "displayName": "Revenue",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
                 "color": {
-                  "displayName": "Nation",
                   "fieldName": "nation",
                   "legend": {
                     "position": "bottom"
                   },
+                  "displayName": "Nation",
                   "scale": {
                     "mappings": [
                       {
@@ -465,33 +479,11 @@
                     ],
                     "type": "categorical"
                   }
-                },
-                "x": {
-                  "displayName": "Order Date",
-                  "fieldName": "yearly(o_orderdate)",
-                  "scale": {
-                    "type": "temporal"
-                  }
-                },
-                "y": {
-                  "axis": {
-                    "title": "Revenue"
-                  },
-                  "displayName": "Revenue",
-                  "fieldName": "sum(revenue)",
-                  "scale": {
-                    "type": "quantitative"
-                  }
                 }
               },
-              "frame": {
-                "description": "By Nation",
-                "showDescription": true,
-                "showTitle": true,
-                "title": "Revenue Trend"
-              },
-              "version": 3,
-              "widgetType": "bar"
+              "data": {
+                "queryName": "main_query"
+              }
             }
           },
           "position": {
@@ -506,7 +498,7 @@
             "name": "b9d722ef",
             "queries": [
               {
-                "name": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1a58ea41d8abd497e3d322ed6cb_o_orderdate",
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_o_orderdate",
                 "query": {
                   "datasetName": "ced91012",
                   "fields": [
@@ -523,7 +515,7 @@
                 }
               },
               {
-                "name": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1a58eb61207a6fe83b0fbe223bc_Date",
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Date",
                 "query": {
                   "datasetName": "e7a62da2",
                   "fields": [
@@ -540,7 +532,7 @@
                 }
               },
               {
-                "name": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1a58eb910c189ac48eb3557022d_o_orderdate",
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c7ba4d68e2eb4a01abb_o_orderdate",
                 "query": {
                   "datasetName": "1bb727fb",
                   "fields": [
@@ -557,7 +549,7 @@
                 }
               },
               {
-                "name": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1ab760d1fa09512d065c91c1092_o_orderdate",
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c88a6727e22e75f39b6_o_orderdate",
                 "query": {
                   "datasetName": "a91573ca",
                   "fields": [
@@ -574,7 +566,7 @@
                 }
               },
               {
-                "name": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1aedd6c1a6ca2452baccaaf289d_l_shipdate",
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c868860a956c0b52fda_l_shipdate",
                 "query": {
                   "datasetName": "3530ec9c",
                   "fields": [
@@ -592,41 +584,39 @@
               }
             ],
             "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true,
+                "title": {
+                  "value": "Date Range",
+                  "fields": []
+                }
+              },
+              "widgetType": "filter-multi-select",
               "encodings": {
                 "fields": [
                   {
-                    "displayName": "o_orderdate",
                     "fieldName": "o_orderdate",
-                    "queryName": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1a58ea41d8abd497e3d322ed6cb_o_orderdate"
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_o_orderdate"
                   },
                   {
-                    "displayName": "Date",
                     "fieldName": "Date",
-                    "queryName": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1a58eb61207a6fe83b0fbe223bc_Date"
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Date"
                   },
                   {
-                    "displayName": "o_orderdate",
                     "fieldName": "o_orderdate",
-                    "queryName": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1a58eb910c189ac48eb3557022d_o_orderdate"
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c7ba4d68e2eb4a01abb_o_orderdate"
                   },
                   {
-                    "displayName": "o_orderdate",
                     "fieldName": "o_orderdate",
-                    "queryName": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1ab760d1fa09512d065c91c1092_o_orderdate"
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c88a6727e22e75f39b6_o_orderdate"
                   },
                   {
-                    "displayName": "l_shipdate",
                     "fieldName": "l_shipdate",
-                    "queryName": "dashboards/01eed1a58ea213dabed58b9c66678535/datasets/01eed1aedd6c1a6ca2452baccaaf289d_l_shipdate"
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c868860a956c0b52fda_l_shipdate"
                   }
                 ]
-              },
-              "frame": {
-                "showTitle": true,
-                "title": "Date Range"
-              },
-              "version": 2,
-              "widgetType": "filter-date-range-picker"
+              }
             }
           },
           "position": {
@@ -646,16 +636,16 @@
                   "datasetName": "a91573ca",
                   "fields": [
                     {
+                      "name": "sum(order_count)",
+                      "expression": "SUM(`order_count`)"
+                    },
+                    {
                       "name": "priority",
                       "expression": "`priority`"
                     },
                     {
                       "name": "ship_mode",
                       "expression": "`ship_mode`"
-                    },
-                    {
-                      "name": "sum(order_count)",
-                      "expression": "SUM(`order_count`)"
                     }
                   ],
                   "disaggregated": false
@@ -663,13 +653,41 @@
               }
             ],
             "spec": {
+              "frame": {
+                "showDescription": true,
+                "showTitle": true,
+                "title": {
+                  "value": "Top Shipping Methods",
+                  "fields": []
+                },
+                "description": {
+                  "value": "By Order Priority",
+                  "fields": []
+                }
+              },
+              "version": 3,
+              "widgetType": "heatmap",
               "encodings": {
+                "x": {
+                  "fieldName": "priority",
+                  "displayName": "Order Priority",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "ship_mode",
+                  "displayName": "Shipping Method",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
                 "color": {
-                  "displayName": "Order Count",
                   "fieldName": "sum(order_count)",
                   "legend": {
                     "title": "Order Count"
                   },
+                  "displayName": "Order Count",
                   "scale": {
                     "colorRamp": {
                       "colors": {
@@ -681,30 +699,11 @@
                     "reverse": true,
                     "type": "quantitative"
                   }
-                },
-                "x": {
-                  "displayName": "Order Priority",
-                  "fieldName": "priority",
-                  "scale": {
-                    "type": "categorical"
-                  }
-                },
-                "y": {
-                  "displayName": "Shipping Method",
-                  "fieldName": "ship_mode",
-                  "scale": {
-                    "type": "categorical"
-                  }
                 }
               },
-              "frame": {
-                "description": "By Order Priority",
-                "showDescription": true,
-                "showTitle": true,
-                "title": "Top Shipping Methods"
-              },
-              "version": 3,
-              "widgetType": "heatmap"
+              "data": {
+                "queryName": "main_query"
+              }
             }
           },
           "position": {
@@ -712,6 +711,348 @@
             "y": 5,
             "width": 8,
             "height": 5
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "1ea19e49",
+      "displayName": "Untitled page",
+      "layout": [
+        {
+          "widget": {
+            "name": "a7a3745b",
+            "queries": [
+              {
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_revenue",
+                "query": {
+                  "datasetName": "ced91012",
+                  "fields": [
+                    {
+                      "name": "revenue",
+                      "expression": "`revenue`"
+                    },
+                    {
+                      "name": "revenue_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              },
+              {
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Total Price",
+                "query": {
+                  "datasetName": "e7a62da2",
+                  "fields": [
+                    {
+                      "name": "Total Price",
+                      "expression": "`Total Price`"
+                    },
+                    {
+                      "name": "Total Price_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true
+              },
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "revenue",
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_revenue"
+                  },
+                  {
+                    "fieldName": "Total Price",
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Total Price"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 4,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "e7519d6f",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ced91012",
+                  "fields": [
+                    {
+                      "name": "nation",
+                      "expression": "`nation`"
+                    },
+                    {
+                      "name": "o_orderdate",
+                      "expression": "`o_orderdate`"
+                    },
+                    {
+                      "name": "revenue",
+                      "expression": "`revenue`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "nation"
+                  },
+                  {
+                    "fieldName": "o_orderdate"
+                  },
+                  {
+                    "fieldName": "revenue"
+                  }
+                ]
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "e56a38b2",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e7a62da2",
+                  "fields": [
+                    {
+                      "name": "Priority",
+                      "expression": "`Priority`"
+                    },
+                    {
+                      "name": "Date",
+                      "expression": "`Date`"
+                    },
+                    {
+                      "name": "Total Price",
+                      "expression": "`Total Price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "Priority"
+                  },
+                  {
+                    "fieldName": "Date"
+                  },
+                  {
+                    "fieldName": "Total Price"
+                  }
+                ]
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 1,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "20241111",
+            "queries": [
+              {
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_o_orderdate",
+                "query": {
+                  "datasetName": "ced91012",
+                  "fields": [
+                    {
+                      "name": "o_orderdate",
+                      "expression": "`o_orderdate`"
+                    },
+                    {
+                      "name": "o_orderdate_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              },
+              {
+                "name": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Date",
+                "query": {
+                  "datasetName": "e7a62da2",
+                  "fields": [
+                    {
+                      "name": "Date",
+                      "expression": "`Date`"
+                    },
+                    {
+                      "name": "Date_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "selection": {
+                "defaultSelection": {
+                  "values": {
+                    "dataType": "DATE",
+                    "values": [
+                      {
+                        "value": "1994-01-02T00:00:00.000"
+                      }
+                    ]
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true
+              },
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "o_orderdate",
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c89a29f81f75c91ca1e_o_orderdate"
+                  },
+                  {
+                    "fieldName": "Date",
+                    "queryName": "dashboards/01f1c13acb5e1514a69bac0fb4c1421f/datasets/01f1c13acb5e1c8aa328fe01f5eb2463_Date"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 4,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "fa64749c",
+      "displayName": "Global Filters",
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "9d5c6076",
+      "displayName": "variable",
+      "layout": [
+        {
+          "widget": {
+            "name": "total-orders-return-count",
+            "spec": {
+              "version": 2,
+              "disallowAll": true,
+              "frame": {
+                "showTitle": true,
+                "title": {
+                  "value": "Total Orders vs Return Count",
+                  "fields": []
+                }
+              },
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "variableName": "Total Orders vs Return Count"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 10,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "35f514f8",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "3530ec9c",
+                  "fields": [
+                    {
+                      "name": "$Total Orders vs Return Count",
+                      "variable": "Total Orders vs Return Count"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "$Total Orders vs Return Count"
+                }
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 6,
+            "height": 6
           }
         }
       ],
@@ -728,5 +1069,35 @@
       "enablementMode": "ENABLED"
     },
     "applyModeEnabled": false
-  }
+  },
+  "variables": [
+    {
+      "name": "revenue",
+      "displayName": "revenue",
+      "field": {
+        "options": [
+          {
+            "expression": "SUM(`3530ec9c`.`total_orders`)"
+          },
+          {
+            "expression": "SUM(`3530ec9c`.`return_count`)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Total Orders vs Return Count",
+      "displayName": "Total Orders vs Return Count",
+      "field": {
+        "options": [
+          {
+            "expression": "SUM(`3530ec9c`.`total_orders`)"
+          },
+          {
+            "expression": "SUM(`3530ec9c`.`return_count`)"
+          }
+        ]
+      }
+    }
+  ]
 }
